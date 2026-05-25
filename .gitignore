@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# local sqlite database (libsql + better-auth)
+/data/
+/public/data/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -39,3 +43,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.cursor/
+.cursorrules
+.claude/
+.agents/
+
+copilotkit-features.md
