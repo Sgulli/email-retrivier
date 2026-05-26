@@ -87,7 +87,8 @@ export function EmailPreviewSidebarDetail() {
       <Dialog open={fullscreen} onOpenChange={(open) => !open && setFullscreen(false)}>
         <DialogContent
           showCloseButton={false}
-          className="inset-0 m-0 h-dvh w-dvw max-w-none rounded-none flex flex-col gap-0 p-0"
+          overlayClassName="z-[100]"
+          className="fixed inset-0 top-0 left-0 z-[100] m-0 flex h-dvh w-dvw max-w-none translate-x-0 translate-y-0 flex-col gap-0 rounded-none p-0 sm:max-w-none"
         >
           <DialogDescription className="sr-only">
             Full screen view: {subject}

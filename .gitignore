@@ -50,3 +50,5 @@ next-env.d.ts
 .agents/
 
 copilotkit-features.md
+
+.mastra/

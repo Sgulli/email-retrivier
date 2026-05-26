@@ -9,12 +9,14 @@ import { EmailUiProvider } from "@/components/email-ui-context";
 import { EmailPreviewSidebarDetail } from "@/components/email-preview-sidebar";
 import { SearchResultsPanel } from "@/components/search-results-panel";
 import { DownloadReadyPanel } from "@/components/download-ready-panel";
+import { SignOutButton } from "@/components/sign-out-button";
 
 export default function Home() {
   return (
     <AuthGuard>
       <CopilotKit runtimeUrl="/api/copilotkit" agent="emailAgent">
         <EmailUiProvider>
+          <SignOutButton />
           <EmailFrontendTools />
           <EmailToolRenderers />
           <CopilotChat

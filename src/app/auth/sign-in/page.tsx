@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { SCOPES } from "@/mastra/lib/consts";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function SignInPage() {
   const { data: session } = useSession();
@@ -16,6 +18,9 @@ export default function SignInPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-6">
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
       <Card className="max-w-sm w-full">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold tracking-tight">Email Retriever</CardTitle>
@@ -29,6 +34,7 @@ export default function SignInPage() {
               await signIn.social({
                 provider: "google",
                 callbackURL: "/",
+                scopes: SCOPES,
               });
             }}
           >
